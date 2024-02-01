@@ -57,8 +57,8 @@ public class ClientIdUpperCaseUDPOneByOne {
 				var buf = ByteBuffer.allocate(BUFFER_SIZE);
 				dc.receive(buf);
 				buf.flip();
-				var current = buffer.getLong();
-				var message = UTF8.decode(buffer).toString();
+				var current = buf.getLong();
+				var message = UTF8.decode(buf).toString();
 				buf.clear();
 				queue.put(new Response(current, message));
 			}catch (AsynchronousCloseException | InterruptedException e) {
@@ -83,18 +83,18 @@ public class ClientIdUpperCaseUDPOneByOne {
 			for (var line: lines) {
 				var messageBuf = UTF8.encode(line);
 				if (Long.BYTES + messageBuf.limit() > BUFFER_SIZE) {
-					logger.warn("Message size error");
+					logger.warning("Message size error");
 					return;
 				}
 				var buf = ByteBuffer.allocate(BUFFER_SIZE);
 				buf.putLong(this.id);
-				buffer.put(messageBuf);
+				buf.put(messageBuf);
 
 				var waiting = timeout;
 				var start = System.currentTimeMillis();
 				var elapsed = 0L;
 				buf.flip();
-				dc.send(buffer, server);
+				dc.send(buf, server);
 				for (;;) {
 					var response = queue.poll(waiting, TimeUnit.MILLISECONDS);
 					elapsed = System.currentTimeMillis() - start;
@@ -105,7 +105,7 @@ public class ClientIdUpperCaseUDPOneByOne {
 						break;
 					}
 					if (elapsed >= timeout){
-						logger.warn("Server don't answer");
+						logger.warning("Server don't answer");
 						buf.flip();
 						dc.send(buf, server);
 						start = System.currentTimeMillis();
