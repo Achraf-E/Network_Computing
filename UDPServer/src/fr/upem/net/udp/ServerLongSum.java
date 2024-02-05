@@ -36,7 +36,13 @@ public class ServerLongSum {
                     //Get Infos
                     var session = buffer.get();
                     var sessionID = buffer.getLong();
+                    var idPosOper = buffer.getLong();
+                    var totalOper = buffer.getLong();
+                    var opValue = buffer.getLong();
+                    buffer.clear();
+
                 }
+
 
 
 
