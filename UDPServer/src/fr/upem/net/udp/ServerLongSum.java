@@ -55,6 +55,7 @@ public class ServerLongSum {
                     buffer.flip();
                     dc.send(buffer, sender);
                     logger.info("Sum send to : " + sender);
+                    sessionData.remove(sessionId);
                 }
 
             }

@@ -6,12 +6,15 @@ public class ClientData {
     private long sum;
     private final BitSet checkOperators;
 
+    private final long totalOp;
+
     ClientData(long totalOp){
         checkOperators = new BitSet((int) totalOp);
+        this.totalOp = totalOp;
     }
 
     public void add(long op, long posOp){
-        if(checkOperators.get((int) posOp) || posOp < 0 || posOp > checkOperators.length()){
+        if(checkOperators.get((int) posOp) || posOp < 0 || posOp > totalOp){
             return;
         };
         sum += op;
@@ -19,7 +22,7 @@ public class ClientData {
     }
 
     public boolean checkAllOp(){
-        return checkOperators.cardinality() == checkOperators.length();
+        return checkOperators.cardinality() == totalOp;
     };
 
     public long getSum(){
