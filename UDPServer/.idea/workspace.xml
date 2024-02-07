@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e992d16c-031d-41cf-a284-250ce458e290" name="Changes" comment="Ex2 in progress" />
+    <list default="true" id="e992d16c-031d-41cf-a284-250ce458e290" name="Changes" comment="Ex2 in progress">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UDDNonBloquant" beforeDir="false" afterPath="$PROJECT_DIR$/../UDDNonBloquant" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/upem/net/udp/ClientData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/upem/net/udp/ClientData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/upem/net/udp/ServerLongSum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/upem/net/udp/ServerLongSum.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +99,8 @@
       <workItem from="1706794248280" duration="892000" />
       <workItem from="1706795230208" duration="4859000" />
       <workItem from="1707173384217" duration="4900000" />
-      <workItem from="1707213906944" duration="643000" />
+      <workItem from="1707213906944" duration="3643000" />
+      <workItem from="1707312372812" duration="2612000" />
     </task>
     <task id="LOCAL-00001" summary="Exo 1 finished">
       <option name="closed" value="true" />

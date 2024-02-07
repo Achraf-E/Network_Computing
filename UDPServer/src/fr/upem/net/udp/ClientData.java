@@ -4,25 +4,25 @@ import java.util.BitSet;
 
 public class ClientData {
     private long sum;
-    private final BitSet opSet;
+    private final BitSet checkOperators;
 
-    public ClientData(long totalPosOp){
-        sum = 0;
-        opSet = new BitSet(Math.toIntExact(totalPosOp));
+    ClientData(long totalOp){
+        checkOperators = new BitSet((int) totalOp);
     }
+
+    public void add(long op, long posOp){
+        if(checkOperators.get((int) posOp) || posOp < 0 || posOp > checkOperators.length()){
+            return;
+        };
+        sum += op;
+        checkOperators.set((int) posOp);
+    }
+
+    public boolean checkAllOp(){
+        return checkOperators.cardinality() == checkOperators.length();
+    };
 
     public long getSum(){
         return sum;
-    }
-
-    public void add(long ope, long idPosOp){
-        if(!opSet.get(Math.toIntExact(idPosOp)) && idPosOp < opSet.length()){
-            sum += ope;
-            opSet.set(Math.toIntExact(idPosOp));
-        }
-    }
-
-    public long size(){
-        return opSet.length();
-    }
+    };
 }
